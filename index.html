@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUITAR TUNER</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GUITAR TUNER</title>
+
+  <!-- Retro pixel-art font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <!-- CSS stil dosyası -->
+  <link rel="stylesheet" href="style/style.css" />
 </head>
 <body>
-    <H1 class="main header">GUITAR TUNER</H1>
-    <label for="dbMeter">db Meter</label>
-    <progress id="dbMeter" value="0" max="100"></progress>
-    <p>Desibel: <span id="dbText">0</span> dB</p>
-    <p>Nota: <span id="note">-</span></p>
-    <div style="margin-top: 40px;">
-        <label for="tunerBar"><strong>Nota İçi Frekans Konumu:</strong></label><br>
-        <p>Hedef Nota: <span id="targetNote">-</span></p>
-        <progress id="tunerBar" value="50" max="100" style="width: 300px; height: 20px;"></progress>
+
+  <!-- 🎸 Başlık -->
+  <h1 class="main header">GUITAR TUNER</h1>
+
+  <!-- 🎛️ Barlar Yan Yana -->
+  <div class="bars-wrapper">
+
+    <!-- 🔊 Desibel Barı -->
+    <div class="db-container">
+      <div class="db-label">dB</div>
+      <div class="db-bar-outer">
+        <div class="db-bar-inner" id="dbLevel"></div>
+      </div>
+      <div class="db-value"><span id="dbText">0</span> dB</div>
     </div>
 
-    <script src="js/app.js"></script>
+    <!-- 🎵 Nota Barı -->
+    <div class="note-bar-container">
+      <div class="note-label" id="note">-</div>
+      <div class="note-bar-outer">
+        <div class="note-bar-inner" id="tunerBar"></div>
+      </div>
+      <div class="note-target">Hedef Nota: <span id="targetNote">-</span></div>
+    </div>
+
+  </div>
+
+  <!-- 🔧 JS dosyası -->
+  <script src="js/app.js"></script>
 </body>
 </html>

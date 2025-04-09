@@ -38,8 +38,8 @@ function updateDecibelUI() {
   const db = 20 * Math.log10(rms);
   const clampedDb = Math.max(0, Math.round(db + 100));
 
-  document.getElementById("dbMeter").value = clampedDb;
-  document.getElementById("dbText").textContent = clampedDb;
+  document.getElementById("dbLevel").style.height = clampedDb + "%";
+
 }
 
 // Sıfır geçişlerine göre temel frekansı tahmin et
@@ -106,9 +106,9 @@ function updateNoteUI() {
         // Tuner bar
         const targetFreq = getNoteFrequency(detectedNote);
         const deviation = freq - targetFreq;
-        const percent = 50 + Math.max(-50, Math.min(50, (deviation / targetFreq) * 100 * 2));
+        const percent = 50 + Math.max(-50, Math.min(50, (deviation / targetFreq) * 100 * 15));
         if (!isNaN(percent)) {
-          document.getElementById("tunerBar").value = Math.round(percent);
+          document.getElementById("tunerBar").style.width = percent + "%";
           document.getElementById("targetNote").textContent = detectedNote;
         }
       }
@@ -137,4 +137,3 @@ async function main() {
 
 // Sayfa yüklendiğinde başlat
 window.onload = main;
-console.log("Freq:", freq.toFixed(2), "→", detectedNote);

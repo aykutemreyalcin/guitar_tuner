@@ -1,0 +1,125 @@
+/* Sayfa genel görünüm */
+body {
+    background-color: #C0BA89; /* Sage */
+    text-align: center;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  /* Başlık stili */
+  h1.main.header {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #B76B66; /* Copper Penny */
+    background-color: #3C445A; /* Charcoal */
+    padding: 20px;
+    border: 4px solid #D4AD6A; /* Earth Yellow */
+    border-radius: 10px;
+    width: fit-content;
+    margin: 30px auto;
+    box-shadow: 0 0 12px #239997; /* Jungle Green */
+    animation: pulseGlow 2.5s ease-in-out infinite;
+  }
+  
+  /* Parlama animasyonu */
+  @keyframes pulseGlow {
+    0%   { box-shadow: 0 0 6px #239997; }
+    50%  { box-shadow: 0 0 18px #239997; }
+    100% { box-shadow: 0 0 6px #239997; }
+  }
+  
+/* dB Meter genel konteyner */
+.db-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 20px;
+
+  }
+  
+  /* dB yazısı */
+  .db-label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #3C445A; /* Charcoal */
+    font-weight: bold;
+  }
+  
+  /* Barın dış çerçevesi */
+  .db-bar-outer {
+    height: 200px;
+    width: 20px;
+    background-color: #D4AD6A; /* Earth Yellow */
+    border: 2px solid #3C445A; /* Charcoal */
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px #239997; /* Jungle Green */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Barın dolan kısmı */
+  .db-bar-inner {
+    height: 140px;  /* Eskiden 200px idi */
+    width: 14px;    /* Daralttık */
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, #8A9628, #B76B66); /* Jungle > Penny */
+    transition: height 0.2s ease;
+    box-shadow: 0 0 6px #8A9628;
+  }
+  
+  /* Değer sayısı */
+  .db-value {
+    margin-top: 10px;
+    color: #3C445A;
+    font-weight: bold;
+  }
+  
+/* Ana kapsayıcı: db + nota yan yana */
+.bars-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  
+  /* 🎵 Nota bar kapsayıcı */
+  .note-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Nota yazısı */
+  .note-label {
+    font-size: 16px;
+    color: #3C445A;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  /* Nota bar dışı */
+  .note-bar-outer {
+    width: 400px;
+    height: 20px;
+    background-color: #3C445A; /* Charcoal gibi koyu */
+    border: 3px solid #D4AD6A; /* Earth Yellow border */
+    box-shadow: inset 0 0 6px #239997;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Nota bar içi (yeşil çizgi) */
+  .note-bar-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%; /* Başlangıçta ortada */
+    background-color: #39ff14; /* Parlak yeşil - retro */
+    transition: width 0.2s ease;
+  }
+  
